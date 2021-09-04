@@ -1,0 +1,129 @@
+.prize {
+  // .prize-section {
+  &-section {
+    position: relative;
+    min-height: 100vh;
+    @include adaptive(min-height, 810, 760, 0);
+
+    height: auto;
+    @include adaptive(padding-bottom, 50, 80, 0);
+    @include adaptive(padding-top, 55, 20, 0);
+    @media only screen and (max-width: 1152px) {
+      min-height: 1px;
+      @include adaptive(height, 810, 760, 0);
+      margin-bottom: -1px;
+    }
+    // .prize-section__title {
+    &__title {
+    }
+    &::before {
+      @include _transition(all, 0.85s);
+      z-index: 0;
+
+      content: "";
+      display: block;
+      position: absolute;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      // height: 75vh;
+      height: 75%;
+
+      background: $accentThirdColor;
+      @media only screen and (max-width: 1152px) {
+      }
+    }
+    // .prize-section__bg {
+    &__bg {
+      @include _transition(all, 0.85s);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      // height: 75vh;
+      height: 75%;
+
+      opacity: 0.13;
+      z-index: 0;
+      background-size: contain;
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+      animation: bgAnimateLtr 200000s linear infinite alternate;
+      transform: translateY(0%);
+      @media only screen and (max-width: 1152px) {
+        background-size: cover;
+
+        // height: 75%;
+      }
+    }
+  }
+  // .prize__picture {
+  &__picture {
+  }
+  // .prize-slider {
+  &-slider {
+    @include adaptive(width, 660, 390, 0);
+    @include adaptive(height, 410, 260, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    z-index: 1;
+    position: relative;
+    overflow: unset;
+    @include adaptive(margin-top, -65, -25, 0);
+    @include adaptive(margin-bottom, -45, -25, 0);
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  // prize-slides {
+  &-slides {
+    transition-timing-function: cubic-bezier(0.3, 0.05, 0.29, 1);
+  }
+  // prize-slide {
+  &-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    @include _transition(all, 0.45s);
+    pointer-events: none;
+    opacity: 0;
+
+    &.swiper-slide-visible {
+      pointer-events: all;
+      opacity: 1 !important;
+    }
+  }
+}
+
+.collection {
+  // collection__title
+  &__title {
+  }
+  // .collection-slider {
+  &-slider {
+    width: 100%;
+  }
+  // .collection-slides {
+  &-slides {
+    width: 100%;
+    transition-timing-function: cubic-bezier(0.3, 0.05, 0.69, 0.96);
+    transition-delay: 0;
+    // justify-content: center;
+    // align-items: center;
+  }
+  // collection-slide {
+  &-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptive(width, 255, 220, 0);
+    @include adaptive(height, 325, 280, 0);
+    @include _borderRadius(10px);
+    overflow: hidden;
+  }
+}

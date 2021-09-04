@@ -1,0 +1,41 @@
+section.section.prize-section#prize
+  .prize-section__bg(style="background-image: url('./img/main-bg.jpg');")
+  h2.section__title.prize-section__title.animate.scroll Призы
+  .prize-slider.swiper-container.animate.scroll
+    .prize-slides.swiper-wrapper
+      a(href="#prize").prize-slide.swiper-slide
+        include ./../../mixins/img-NL
+        +img(
+          "./img/prize-image-desktop.png",
+          "Целый месяц БЕСПЛАТНО")
+  h3.section__title.__white-color.collection__title.animate.scroll Бренды и коллекции
+  #collection.collection-slider.swiper-container.animate.scroll
+    .collection-slides.swiper-wrapper
+      //collection-slide start
+      include ./../../mixins/collection-slide
+      +collection-slide(
+        "./img/brands/brands-image-1.png",
+        "home blakit")
+      +collection-slide(
+        "./img/brands/brands-image-2.png",
+        "kids blakit")
+      +collection-slide(
+        "./img/brands/brands-image-3.png",
+        "avant garde")
+      +collection-slide(
+        "./img/brands/brands-image-4.png",
+        "паўлинка")
+      +collection-slide(
+        "./img/brands/brands-image-5.png",
+        "home blakit")
+      +collection-slide(
+        "./img/brands/brands-image-6.png",
+        "паўлинка")
+      +collection-slide(
+        "./img/brands/brands-image-7.png",
+        "home blakit")
+      +collection-slide(
+        "./img/brands/brands-image-7.png",
+        "home blakit")
+      //collection-slide end
+
