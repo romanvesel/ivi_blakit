@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001630793308';
-$dateexpire = '001630829308';
+$datecreate = '001630999404';
+$dateexpire = '001631035404';
 $ser_content = 'a:2:{s:7:"CONTENT";s:0:"";s:4:"VARS";a:1:{s:7:"landing";a:13:{s:2:"ID";s:7:"landing";s:3:"~ID";s:7:"landing";s:8:"SECTIONS";s:1:"Y";s:9:"~SECTIONS";s:1:"Y";s:16:"EDIT_FILE_BEFORE";s:0:"";s:17:"~EDIT_FILE_BEFORE";s:0:"";s:15:"EDIT_FILE_AFTER";s:0:"";s:16:"~EDIT_FILE_AFTER";s:0:"";s:6:"IN_RSS";s:1:"N";s:7:"~IN_RSS";s:1:"N";s:4:"SORT";s:3:"500";s:5:"~SORT";s:3:"500";s:5:"_lang";a:2:{s:2:"ru";a:10:{s:14:"IBLOCK_TYPE_ID";s:7:"landing";s:15:"~IBLOCK_TYPE_ID";s:7:"landing";s:3:"LID";s:2:"ru";s:4:"~LID";s:2:"ru";s:4:"NAME";s:25:"Главные блоки";s:5:"~NAME";s:25:"Главные блоки";s:12:"SECTION_NAME";s:25:"Главные блоки";s:13:"~SECTION_NAME";s:25:"Главные блоки";s:12:"ELEMENT_NAME";s:25:"Главные блоки";s:13:"~ELEMENT_NAME";s:25:"Главные блоки";}s:2:"en";a:10:{s:14:"IBLOCK_TYPE_ID";s:7:"landing";s:15:"~IBLOCK_TYPE_ID";s:7:"landing";s:3:"LID";s:2:"en";s:4:"~LID";s:2:"en";s:4:"NAME";s:11:"Main Blocks";s:5:"~NAME";s:11:"Main Blocks";s:12:"SECTION_NAME";s:11:"Main Blocks";s:13:"~SECTION_NAME";s:11:"Main Blocks";s:12:"ELEMENT_NAME";s:11:"Main Blocks";s:13:"~ELEMENT_NAME";s:11:"Main Blocks";}}}}}';
 return true;
 ?>
