@@ -13,7 +13,8 @@ $entity_data_class = $entity->getDataClass();
 
 // Вывод элементов Highload-блока
 $rs_data = $entity_data_class::getList(array(
-    'select' => array('*')
+    'select' => array('*'),
+    'filter' => array('UF_ACTIVE' => '1')
 ));
 $cupons = array();
 while ($el = $rs_data->fetch()){
@@ -22,6 +23,8 @@ while ($el = $rs_data->fetch()){
         "ID" => $el["ID"],
         "KEY" => $el["UF_CODE"],
         "CUPON" => $el["UF_CUPONS"],
+        "ACTIVE" => $el["UF_ACTIVE"],
+        "ACTIVE1" => $el["UF_ACTIVE1"],
     ];
 }
 foreach ($cupons as $key=>$cupon) {
@@ -65,7 +68,10 @@ foreach ($cupons as $key=>$cupon) {
             curl_close($ch);
 
            /* $arLoadProductArrays = array("ACTIVE" => "N");
-            $res = $el->Update($cupon["ID"], $arLoadProductArrays);*/
+            $res = $el->Update($cupon["ID"], $arLoadProductArrays);*/ // для инфоблока
+            $result = $entity_data_class::update($cupon["ID"], array(
+                'UF_ACTIVE'       => '0'
+            ));
 
 
 
