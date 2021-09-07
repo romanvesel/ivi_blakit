@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/dist/assets/jquery-3.6.0.min.js" => "163070786689501","/dist/assets/intlTelInput-jquery.min.js" => "163070786529539","/dist/assets/jquery.maskedinput.min.js" => "16307078674324","/dist/js/main.min.js" => "1630849590155250",]; ?>
