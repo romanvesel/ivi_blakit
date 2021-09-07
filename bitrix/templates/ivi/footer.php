@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="modal" id="modal__denied">
+    <div class="modal" id="modal__fail">
       <div class="modal__body __alert __alert-denied">
         <div class="modal__content modal-alert __denied"><a class="modal__close __alert close__modal" href="#" role="button"> <span></span><span></span></a>
                     <picture class="modal-alert__picture" itemscope itemtype="http://schema.org/ImageObject">
@@ -59,7 +59,7 @@
     function phone_mask(){
         $.mask.definitions['9']='';
         $.mask.definitions['d']='[0-9]';
-        $("input[name=phone],input.phone").mask("(dd) ddd-dd-dd");
+        $("input[name=phone],input.phone").mask("+375-(dd) ddd-dd-dd");
         $("input[name=phone],input.phone").intlTelInput({
             autoHideDialCode:false,
             autoPlaceholder:"aggressive",
@@ -99,6 +99,157 @@
         }, 0);
     })
     phone_mask()
+</script>
+
+<script>
+
+        let unlock = true;
+        const timeout = 200;
+        const lockPadding = document.querySelectorAll(".lock-padding");
+        const body = document.querySelector("body");
+        const modalAccess = document.querySelector("#modal__access");
+        const modalFail = document.querySelector("#modal__fail");
+
+        const modalOpen = (currentModal) => {
+        if (currentModal && unlock) {
+        const modalOpen = document.querySelector(".modal.--open");
+        if (modalOpen) {
+        modalClose(modalOpen, false);
+    } else {
+        bodyLock();
+    }
+        currentModal.classList.add("--open");
+        currentModal.addEventListener("click", (e) => {
+        const _this = e.currentTarget;
+        if (!e.target.closest(".modal__content")) {
+        modalClose(e.target.closest(".modal"));
+    }
+    });
+    }
+    };
+
+        const modalClose = (modalOpen, doUnlock = true) => {
+        if (unlock) {
+        modalOpen.classList.remove("--open");
+        if (doUnlock) {
+        bodyUnlock();
+    }
+    }
+    };
+
+        const bodyLock = () => {
+        const lockPaddingValue =
+        window.innerWidth - document.querySelector("body").offsetWidth + "px";
+        if (lockPadding.length > 0) {
+        lockPadding.forEach((el) => {
+        el.style.paddingRight = lockPaddingValue;
+    });
+    }
+
+        body.style.paddingRight = lockPaddingValue;
+        body.classList.add("--fixed");
+
+        unlock = false;
+        setTimeout(() => {
+        unlock = true;
+    }, timeout);
+    };
+        const bodyUnlock = () => {
+        setTimeout(() => {
+            if (lockPadding.length > 0) {
+                lockPadding.forEach((el) => {
+                    el.style.paddingRight = "0px";
+                });
+            }
+            body.style.paddingRight = "0px";
+            body.classList.remove("--fixed");
+        }, timeout);
+        unlock = false;
+        setTimeout(() => {
+        unlock = true;
+    }, timeout);
+    };
+        // modalOpen(modalAccess); // вызов при удачном отправлении
+        // modalOpen(modalFail); // вызов при не удачном отправлении
+</script>
+
+<script>
+    $(document).ready(function() {
+        $("form").on('submit', function(event){
+            event.preventDefault();
+            var th = $(this);
+            $.ajax({
+                type: "POST",
+                url: "./ajax/test.php",
+                data: th.serialize() ,
+                success: function(data) {
+                if(data.includes("success")){
+
+                    modalOpen(modalAccess);
+
+                }else if(!data){
+
+                    modalOpen(modalFail);
+
+                }
+            }
+          })
+            // }).done(function(data) {
+            //     if(data.includes("success")){
+
+            //         modalOpen(modalAccess);
+
+            //     }else if(!data){
+
+            //         modalOpen(modalFail);
+
+            //     }
+            // });
+           /* modalClose(modalFail);
+            return false;*/
+        });
+    });
+      /*  $(document).ready(function() {
+          $("form").on('submit', function(event){
+            event.preventDefault();
+            var th = $(this);
+            $.ajax({
+              type: "POST",
+              url: "./ajax/send.php",
+              data: th.serialize()
+            }).done(function() {
+              modalOpen(modalAccess);
+              setTimeout(function() {
+                modalClose(modalAccess);
+                th.trigger("reset");
+              }, 2000);
+            });
+            modalClose(modalFail);
+            return false;
+          });
+        });*/
+    //     $("#send_form").click(function(e){
+    //     e.preventDefault();
+    //     var $form = $(this).parents("form");
+    //     $.ajax({
+    //     url: '/ajax/send.php',
+    //     method: 'post',
+    //     async:false,
+    //     data: $form.serializeArray(),
+    //     success: function(data){
+
+    //     if(data.includes("ok")){
+    //     modalOpen(modalAccess);
+    //     setTimeout(function () {
+    //     modalClose(modalAccess);
+    // },5000);
+    // }
+    //     else {
+    //     modalOpen(modalFail);
+    // }
+    // }
+    // });
+    // });
 </script>
 
 </body>

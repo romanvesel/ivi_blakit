@@ -1,0 +1,58 @@
+section#code.section.top-section
+  .top-section__bg(style="background-image: url('./img/main-bg.jpg');")
+  .wrapper.top-section__wrapper
+    a.logo.animate(href="")
+      include ./../../mixins/img-NL
+      +img(
+        "./img/icons/logo.svg",
+        "Онлайн-кинотеатр ivi - фильмы, сериалы и мультфильмы смотреть онлайн бесплатно в хорошем качестве")
+    .top-section__title.animate
+      h1 Смотри <span style="color:#ec174f;">ivi</span> вместе с <span style="color:#32376f;">BLAKIT</span> 
+    form.top-form.animate(
+      action="#",
+      method="POST")
+      input(
+        type="hidden", 
+        name="project_name",
+        value="ivi.betahon.by")
+      input(
+        type="hidden", 
+        name="admin_email",
+        value="leo.rudenkov@gmail.com")
+      input(
+        type="hidden", 
+        name="form_subject",
+        value="Письмо с сайта")
+      label.top-form__label.label(for="top-name")  Ваше имя:
+      input#top-name.top-form__input.input(
+        type="text", 
+        name="name",
+        required,
+        placeholder="Введите ваше имя")
+      label.top-form__label.label(for="top-phone") Номер телефона:
+      input#top-phone.top-form__input.input(
+        type="tel", 
+        name="phone",
+        required)
+      label.top-form__label.label(for="top-city")  Город:
+      input#top-city.top-form__input.input(
+        type="text", 
+        name="city",
+        required,
+        placeholder="Введите название вашего города")
+      label.top-form__label.label(for="top-password")  Код:
+      span.top-form__input-wrap.input-wrap
+        input#top-password.top-form__input.input(
+          type="password", 
+          name="city",
+          required,
+          placeholder="Введите код")
+        label(for="top-password").show-pass
+      span.top-form__checkbox.custom-checkbox 
+        input#top-agree.custom-checkbox__input(
+          type="checkbox", 
+          name="agree",
+          required)
+        label(for="top-agree").custom-checkbox__checker.top-form__checker
+        label(for="top-agree").custom-checkbox__label.top-form__label Я согласен с условиями акций и рассылок
+      button.top-form__btn.btn(type="submit") Отправить

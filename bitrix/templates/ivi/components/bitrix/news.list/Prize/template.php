@@ -18,10 +18,14 @@ $this->setFrameMode(true);
 <div class="prize-slider swiper-container animate scroll">
     <div class="prize-slides swiper-wrapper">
         <?foreach($arResult["ITEMS"] as $arItem):?>
-        <a class="prize-slide swiper-slide" href="<?=$arItem['PROPERTIES']['PAGE_PRIZ_LINK']['VALUE']?>">
+        <div class="prize-slide swiper-slide">
             <img class="img--full img--center" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>" title="<?=$arItem['PREVIEW_PICTURE']['TITLE']?>" draggable="false" loading="lazy">
-        </a>
+        </div>
         <?endforeach;?>
+    </div>
+    <div class="prize-slider-control">
+        <button class="prize-slider__btn-prev prize-slider__btn"></button>
+        <button class="prize-slider__btn-next prize-slider__btn"></button>
     </div>
 </div>
 
