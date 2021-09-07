@@ -3,3 +3,27 @@ script(src="./assets/intlTelInput-jquery.min.js")
 script(src="./assets/jquery.maskedinput.min.js")
 script(src="js/main.min.js")
 include ./maskscript
+include ./modalscript
+script.   
+        $(document).ready(function() {
+
+          
+          $("form").on('submit', function(event){
+            event.preventDefault();
+            var th = $(this);
+            $.ajax({
+              type: "POST",
+              url: "./assets/mail.php",
+              data: th.serialize()
+            }).done(function() {
+              modalOpen(modalAccess);
+              setTimeout(function() {
+                modalClose(modalAccess);
+                th.trigger("reset");
+              }, 2000);
+            });
+            modalClose(modalFale);
+            return false;
+          });
+
+        });

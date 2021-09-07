@@ -9,7 +9,7 @@ $APPLICATION->SetTitle("Мебельная компания");
             <div class="top-section__title animate">
                 <h1>Смотри <span style="color:#ec174f;">ivi</span> вместе с <span style="color:#32376f;">BLAKIT</span> </h1>
             </div>
-            <form class="top-form animate" action="/ajax/send.php" method="POST">
+            <form class="top-form animate"  method="POST">
                 <label class="top-form__label label" for="top-name"> Ваше имя:</label>
                 <input class="top-form__input input" id="top-name" type="text" name="name" required placeholder="Введите ваше имя">
                 <label class="top-form__label label" for="top-phone">Номер телефона:</label>
@@ -36,14 +36,14 @@ $APPLICATION->IncludeFile(
 	Array("MODE"=>"html")
 );
 ?>
-        
+
     </section>
     <!--rule-section end-->
     <!--prize-section start-->
     <section class="section prize-section" id="prize">
         <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"Prize", 
+	"bitrix:news.list",
+	"Prize",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -111,10 +111,10 @@ $APPLICATION->IncludeFile(
 	),
 	false
 );?>
-       
+
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"Brand", 
+	"bitrix:news.list",
+	"Brand",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -184,14 +184,6 @@ $APPLICATION->IncludeFile(
 
       </section>
     <!--prize-section end-->
-<script>
-    $(function(){
-        $("#send_form").click(function(e){
-            e.preventDefault();
-            var $form = $(this).parents("form");
-            $.post("/ajax/send.php",$form.serializeArray(),function(data){
-            })
-        });
-    })
-</script>
+
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

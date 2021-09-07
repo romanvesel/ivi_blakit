@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001630793528';
-$dateexpire = '001630829528';
+$datecreate = '001631041976';
+$dateexpire = '001631077976';
 $ser_content = 'a:2:{s:7:"CONTENT";s:3429:" <h3 class="section__title __white-color collection__title animate scroll">Бренды и коллекции</h3>
         <div class="collection-slider swiper-container animate scroll" id="collection">
             <div class="collection-slides swiper-wrapper">

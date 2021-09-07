@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // function call start
   // ytPlayer();
   // lazyBg();
-  modalWindowInit();
+  // modalWindowInit();
   btnsFunc();
   showVisible();
   window.onscroll = showVisible;
