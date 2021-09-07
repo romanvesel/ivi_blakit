@@ -180,7 +180,7 @@
             var th = $(this);
             $.ajax({
                 type: "POST",
-                url: "./ajax/send.php",
+                url: "./ajax/test.php",
                 data: th.serialize() ,
                 success: function(data) {
                 if(data.includes("success")){

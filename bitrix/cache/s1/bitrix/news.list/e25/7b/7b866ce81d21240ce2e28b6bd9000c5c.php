@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001630999754';
-$dateexpire = '001631035754';
+$datecreate = '001631041976';
+$dateexpire = '001631077976';
 $ser_content = 'a:2:{s:7:"CONTENT";s:1020:"
 <div class="prize-section__bg" style="background-image: url(\'/bitrix/templates/ivi/img/main-bg.jpg\');"></div>
 <h2 class="section__title prize-section__title animate scroll">Призы</h2>
